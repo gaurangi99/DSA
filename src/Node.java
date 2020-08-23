@@ -2,8 +2,8 @@ public class Node {
 	int val;
 	Node next;
 	
-	Node(Node head, int val){
+	Node(int val, Node next){
 		this.val=val;
-		next=head.next;
+		this.next=next;
 	}
 }

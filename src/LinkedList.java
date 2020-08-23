@@ -3,13 +3,23 @@ public class LinkedList {
 
 	public static void main(String[] args) {
 		LinkedList l=new LinkedList();
-		insert(l.head, 3);
+		insert(3, l.head);
+		insert(4, l.head);
+		insert(5, l.head);
+		display(l.head);
 	}
 
-	public static Node insert(Node head, int k) {
-		Node newNode=new Node(head.next, k);
-		head.next=newNode;
-		return newNode;
+	public static Node insert(int k, Node head) {
+		if(head==null) {
+			Node newNode=new Node(k, head);
+			head=newNode;
+			return newNode;
+		}
+		else {
+			Node newNode=new Node(k, head.next);
+			head.next=newNode;
+			return newNode;
+		}
 	}
 
 	public static void display(Node head) {
