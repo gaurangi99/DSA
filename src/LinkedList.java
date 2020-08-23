@@ -2,7 +2,8 @@ public class LinkedList {
 	Node head;
 
 	public static void main(String[] args) {
-
+		LinkedList l=new LinkedList();
+		insert(l.head, 3);
 	}
 
 	public static Node insert(Node head, int k) {
