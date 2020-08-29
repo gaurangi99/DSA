@@ -9,18 +9,17 @@ public class LinkedList {
 		display(l.head);
 	}
 
-	public void insert(int k) {
+	public Node insert(int k) {
+		Node newNode;
 		if (head == null) {
-			Node newNode = new Node(k, null);
+			newNode = new Node(k, null);
 			head = newNode;
 		} else {
 			Node cur = head;
-			while (cur != null && cur.next != null) {
-				cur = cur.next;
-			}
-			Node newNode = new Node(k, head.next);
-			head.next = newNode;
+			newNode = new Node(k, cur);
+			head= newNode;
 		}
+		return head;
 	}
 
 	public Node insertKAfterEveryElement(int k) {
@@ -77,8 +76,11 @@ public class LinkedList {
 		}
 	}
 
-	public static Node delete(Node head, int k) {
+	public Node delete(int k) {
 		Node cur = head;
+		if(cur==null) {
+			return;
+		}
 		if (cur.val == k) {
 			head = head.next;
 		}
