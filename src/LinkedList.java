@@ -79,12 +79,12 @@ public class LinkedList {
 	public Node delete(int k) {
 		Node cur = head;
 		if(cur==null) {
-			return;
+			;
 		}
-		if (cur.val == k) {
-			head = head.next;
+		if (cur.val == k && cur.next==null) {
+			head = cur.next;
 		}
-		while (cur != null && cur.next != null) {
+		while (cur.next != null) {
 			if (cur.next.val == k) {
 				cur.next = cur.next.next;
 			}
