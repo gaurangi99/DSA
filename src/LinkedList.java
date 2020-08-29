@@ -3,23 +3,42 @@ public class LinkedList {
 
 	public static void main(String[] args) {
 		LinkedList l=new LinkedList();
-		insert(3, l.head);
-		insert(4, l.head);
-		insert(5, l.head);
+		l.insert(3);
+		l.insert(4);
+		l.insert(5);
 		display(l.head);
 	}
 
-	public static Node insert(int k, Node head) {
+	public void insert(int k) {
 		if(head==null) {
 			Node newNode=new Node(k, head);
-			head=newNode;
-			return newNode;
 		}
 		else {
+			Node cur=head;
+			while(cur!=null && cur.next!=null) {
+				cur=cur.next;
+			}
 			Node newNode=new Node(k, head.next);
 			head.next=newNode;
-			return newNode;
 		}
+	}
+	
+	public Node insertKAfterEveryElement(int k) {
+		Node newNode;
+		if(head==null) {
+			newNode=new Node(k, null);
+		}
+		Node cur=head;
+		while(cur.next!=null) {
+			newNode=new Node(k, cur.next);
+			cur.next=newNode;
+			cur=cur.next.next;
+		}
+		if(cur.next==null) {
+			newNode=new Node(k, null);
+			cur.next=newNode;
+		}
+		return head;
 	}
 
 	public static void display(Node head) {
