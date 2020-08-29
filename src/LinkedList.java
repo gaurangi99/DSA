@@ -1,12 +1,30 @@
+import java.util.*;
+
 public class LinkedList {
-	Node head;
+	Scanner in = new Scanner(System.in);
+	private Node head;
 
 	public static void main(String[] args) {
 		LinkedList l = new LinkedList();
+		System.out.println();
+		l.insert(1);
+		l.insert(2);
 		l.insert(3);
 		l.insert(4);
 		l.insert(5);
-		display(l.head);
+		l.insert(1);
+		l.display();
+		l.delete(1);
+		l.display();
+		l.delete(2);
+		l.display();
+		l.delete(3);
+		l.display();
+		l.delete(4);
+		l.display();
+		l.delete(5);
+		l.display();
+		l.delete(6);
 	}
 
 	public Node insert(int k) {
@@ -17,7 +35,7 @@ public class LinkedList {
 		} else {
 			Node cur = head;
 			newNode = new Node(k, cur);
-			head= newNode;
+			head = newNode;
 		}
 		return head;
 	}
@@ -36,12 +54,13 @@ public class LinkedList {
 		return head;
 	}
 
-	public static void display(Node head) {
+	public void display() {
 		Node cur = head;
 		while (cur != null) {
 			System.out.printf("%d->", cur.val);
 			cur = cur.next;
 		}
+		System.out.println();
 	}
 
 	public static int count(Node head) {
@@ -77,20 +96,22 @@ public class LinkedList {
 	}
 
 	public Node delete(int k) {
+		if (head == null) {
+			System.out.printf("ABORT!! List is empty!\n");
+		}
+		if (head!=null && head.val == k) {
+			head = head.next;
+		}
 		Node cur = head;
-		if(cur==null) {
-			;
-		}
-		if (cur.val == k && cur.next==null) {
-			head = cur.next;
-		}
-		while (cur.next != null) {
+		while (cur != null && cur.next != null) {
 			if (cur.next.val == k) {
 				cur.next = cur.next.next;
 			}
 			cur = cur.next;
 		}
+		if (cur != null && cur.val == k && cur.next == null) {
+			head = cur.next;
+		}
 		return head;
 	}
-
 }
