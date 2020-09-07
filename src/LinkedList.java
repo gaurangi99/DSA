@@ -1,42 +1,21 @@
 import java.util.*;
 
 public class LinkedList {
-	Scanner in = new Scanner(System.in);
 	private Node head;
-
-	public static void main(String[] args) {
-		LinkedList l = new LinkedList();
-		System.out.println();
-		l.insert(1);
-		l.insert(2);
-		l.insert(3);
-		l.insert(4);
-		l.insert(5);
-		l.insert(1);
-		l.display();
-		l.delete(1);
-		l.display();
-		l.delete(2);
-		l.display();
-		l.delete(3);
-		l.display();
-		l.delete(4);
-		l.display();
-		l.delete(5);
-		l.display();
-		l.delete(6);
-	}
-
+	
 	public Node insert(int k) {
-		Node newNode;
-		if (head == null) {
-			newNode = new Node(k, null);
-			head = newNode;
-		} else {
-			Node cur = head;
-			newNode = new Node(k, cur);
-			head = newNode;
-		}
+//		Node newNode;
+//		if (head == null) {
+//			newNode = new Node(k, null);
+//			head = newNode;
+//		} else {
+//			Node cur = head;
+//			newNode = new Node(k, cur);
+//			head = newNode;
+//		}
+		
+		// optimized to the following
+		head=new Node(k, head);
 		return head;
 	}
 
