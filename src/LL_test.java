@@ -25,5 +25,16 @@ public class LL_test {
 		l.delete(5);
 		l.display();
 		l.delete(6);
+		middleElementLL m=new middleElementLL();
+		System.out.println(m.middleNode(l.getHead()));
+		l.insert(1);
+		System.out.println(m.middleNode(l.getHead()).val);
+		l.insert(2);
+		l.insert(3);
+		l.insert(4);
+		l.insert(5);
+		System.out.println(m.middleNode(l.getHead()).val);
+		l.insert(1);
+		System.out.println(m.middleNode(l.getHead()).val);
 	}
 }

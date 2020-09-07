@@ -3,6 +3,10 @@ import java.util.*;
 public class LinkedList {
 	private Node head;
 	
+	public Node getHead() {
+		return head;
+	}
+	
 	public Node insert(int k) {
 //		Node newNode;
 //		if (head == null) {
