@@ -2,11 +2,16 @@ import java.util.*;
 
 public class LinkedList {
 	private Node head;
-	
+
 	public Node getHead() {
 		return head;
 	}
 	
+	public Node setHead(Node head) {
+		this.head=head;
+		return this.head;
+	}
+
 	public Node insert(int k) {
 //		Node newNode;
 //		if (head == null) {
@@ -17,9 +22,23 @@ public class LinkedList {
 //			newNode = new Node(k, cur);
 //			head = newNode;
 //		}
-		
+
 		// optimized to the following
-		head=new Node(k, head);
+		head = new Node(k, head);
+		return head;
+	}
+
+	//to check "adding 2 LL"
+	public Node insertAtEnd(int k) {
+		if (head == null) {
+			insert(k);
+		} else {
+			Node cur = head;
+			while (cur.next != null) {
+				cur = cur.next;
+			}
+			cur.next = new Node(k, null);
+		}
 		return head;
 	}
 
@@ -39,6 +58,9 @@ public class LinkedList {
 
 	public void display() {
 		Node cur = head;
+		if (head == null) {
+			System.out.println("List is empty!");
+		}
 		while (cur != null) {
 			System.out.printf("%d->", cur.val);
 			cur = cur.next;
@@ -82,7 +104,7 @@ public class LinkedList {
 		if (head == null) {
 			System.out.printf("ABORT!! List is empty!\n");
 		}
-		if (head!=null && head.val == k) {
+		if (head != null && head.val == k) {
 			head = head.next;
 		}
 		Node cur = head;
