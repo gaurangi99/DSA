@@ -83,4 +83,15 @@ public class Tree {
 			}
 		}
 	}
+
+	public boolean search(TreeNode root, int val) {
+		if (root == null) {
+			return false;
+		} else if (root.val == val) {
+			return true;
+		}
+		else{
+			return search(root.left,val) || search(root.right,val);
+		}
+	}
 }
