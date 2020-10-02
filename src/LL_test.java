@@ -12,7 +12,7 @@ public class LL_test {
 		l.insertAtTail(3);
 		l.insertAtTail(4);
 		l.insertAtTail(5);
-		//l.insertAtTail(1);
+		// l.insertAtTail(1);
 		l.display();
 //		l.delete(1);
 //		l.display();
@@ -45,7 +45,7 @@ public class LL_test {
 //		l.insert(1);
 //		l.display();
 //		//System.out.println(m.middleNode(l.getHead()).val);
-		
+
 //		LinkedList l1 = new LinkedList();
 //		LinkedList l2 = new LinkedList();
 //		l1.insert(3);
@@ -58,9 +58,8 @@ public class LL_test {
 //		l2.display();
 //		add2LL a=new add2LL();
 //		//System.out.println((a.adding(l1.getHead(),l2.getHead())));
-		
-		oddEvenByPlace o=new oddEvenByPlace();
-		o.oddEvenList(l);
+
+		oddEven o = new oddEven();
 		o.oddEvenPlace(l);
 	}
 }
