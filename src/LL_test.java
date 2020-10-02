@@ -60,6 +60,6 @@ public class LL_test {
 //		//System.out.println((a.adding(l1.getHead(),l2.getHead())));
 
 		oddEven o = new oddEven();
-		o.oddEvenPlace(l);
+		o.oddEvenPlace(l).display();
 	}
 }

@@ -1,75 +1,44 @@
 public class oddEven {
-	
+
 	LinkedList oddEvenList(LinkedList l) {
-		//we're making a copy of the original list, using extra space
-		//try without it
-		LinkedList oddList=new LinkedList();
-		LinkedList evenList=new LinkedList();
-		
-		Node cur=l.head;
-		while(cur!=null) {
-			if(cur.val%2==0) {
+		// we're making a copy of the original list, using extra space
+		// try without it
+		LinkedList oddList = new LinkedList();
+		LinkedList evenList = new LinkedList();
+
+		Node cur = l.head;
+		while (cur != null) {
+			if (cur.val % 2 == 0) {
 				evenList.insertAtTail(cur.val);
-			}
-			else {
+			} else {
 				oddList.insertAtTail(cur.val);
-			}			
-			cur=cur.next;
+			}
+			cur = cur.next;
 		}
-		evenList.tail.next=oddList.head;
+		evenList.tail.next = oddList.head;
 		return evenList;
 	}
-	
-	LinkedList oddEvenPlace(LinkedList l) {
-//		LinkedList oddList=new LinkedList();
-//		LinkedList evenList=new LinkedList();
-//		
-//		Node cur=l.head;
-//		int ctr=1;
-//		while(cur!=null) {
-//			if(ctr%2==0) {
-//				evenList.insertAtTail(cur.val);
-//			}
-//			else {
-//				oddList.insertAtTail(cur.val);
-//			}			
-//			cur=cur.next;
-//			ctr++;
-//		}
-//		evenList.tail.next=oddList.head;
-//		return evenList;
-		
-		if(l.head==null || l.head.next==null || l.head.next.next==null){
-            return l.head;
-        }
-        
-        LinkedList oddList=null;
-        LinkedList evenList=null;
-        
-        LinkedList cur=l.head;
 
-        int ctr=0;
-        while(cur!=null) {
-			if(ctr%2!=0) {
-                evenList.insertAtEnd(cur.val);
+	LinkedList oddEvenPlace(LinkedList l) {
+		LinkedList oddList = new LinkedList();
+		LinkedList evenList = new LinkedList();
+
+		Node cur = l.head;
+		int ctr = 1;
+		while (cur != null) {
+			if (ctr % 2 == 0) {
+				evenList.insertAtTail(cur.val);
+			} else {
+				oddList.insertAtTail(cur.val);
 			}
-			else {
-                oddList.insertAtEnd(cur.val);
-			}			
-			cur=cur.next;
+			cur = cur.next;
 			ctr++;
 		}
-        
-        cur=oddList;
-        while(cur.next!=null){
-            cur=cur.next;
-        }
-        cur.next=evenList;
-        
-        return oddList;
+		evenList.tail.next = oddList.head;
+		return evenList;
 	}
 }
-		
+
 //		Node odd,even;
 //        Node oddHead, evenHead;
 //        //Node cur=head;
