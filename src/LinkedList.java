@@ -131,6 +131,7 @@ public class LinkedList {
 		return head;
 	}
 		
+	//check
 	public Node oddEvenList(Node head) {
         if(head==null || head.next==null || head.next.next==null){
             return head;
