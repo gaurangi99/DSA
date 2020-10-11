@@ -130,4 +130,47 @@ public class LinkedList {
 		}
 		return head;
 	}
+		
+	public Node oddEvenList(Node head) {
+        if(head==null || head.next==null || head.next.next==null){
+            return head;
+        }
+        
+        Node oddList=null;
+        Node evenList=null;
+        
+        Node cur=head;
+
+        int ctr=0;
+        while(cur!=null) {
+			if(ctr%2!=0) {
+                insert(cur.val,evenList);
+			}
+			else {
+                insert(cur.val,oddList);
+			}			
+			cur=cur.next;
+			ctr++;
+		}
+        
+        cur=oddList;
+        while(cur.next!=null){
+            cur=cur.next;
+        }
+        cur.next=evenList;
+        
+        return oddList;
+    }
+	
+	void insert(int val,Node head){
+        if(head==null){
+            head=new Node(val,head);
+        }
+        
+        Node cur=head;
+        while(cur.next!=null){
+            cur=cur.next;
+        }
+        cur.next=new Node(val, null);
+    }
 }
