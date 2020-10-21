@@ -25,6 +25,7 @@ public class Tree {
 		}
 	}
 
+	//count through iteration
 	public void countIter(TreeNode root) {
 		if (root != null) {
 			ctr++;
@@ -34,6 +35,7 @@ public class Tree {
 		System.out.println(ctr);
 	}
 
+	//count through recursion
 	public int count(TreeNode root) {
 		if (root == null) {
 			return 0;
